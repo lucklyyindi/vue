@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue中的列表渲染</title>
+    <script src = "./vue.js"></script>
+</head>
+<body>
+    <div id="app"> 
+            <template  v-for="(item,index) of list" 
+            :key="item.id">
+     <div>
+     {{item.text}}-----{{index}}
+    </div>
+    <span>
+    {{item.text}}
+</span>
+</template>
+</div>
+
+    <script>
+        //push 往数组里添加
+        //pop 删除数组最后一个数据
+        //shift 可以单春数组的第一项
+        //unshift  往数组的第一项中添加东西
+        //splice 做数组的截取
+        //sort  对数组排序
+        //reverse 对数组取反
+        var vm = new Vue({
+            el:"#app",
+            data: {
+                list : [{
+               id:"010120201",
+               text:"hello"
+                },{
+                    id:"010120202",
+               text:"Dell"
+                },{
+                    id:"010120203",
+               text:"Lee"
+           }]
+                }     
+            
+        })
+    </script>
+</body>
+</html>
